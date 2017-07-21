@@ -1,3 +1,17 @@
+===================================
+ Docutils: Documentation Utilities
+===================================
+---------------------------------------------------------
+ Written in Python, for General- and Special-Purpose Use
+---------------------------------------------------------
+
+Docutils is an open-source text processing system for processing
+plaintext documentation into useful formats, such as HTML, LaTeX,
+man-pages, open-document or XML.
+It includes reStructuredText_, the easy to read, easy to use,
+what-you-see-is-what-you-get plaintext markup language.
+----------------------------------------------------------------------
+
 .. blockdiag::
 
     blockdiag admin {
@@ -12,3 +26,8 @@
       B [description = "web server"];
       C [description = "database server"];
    }
+
+Overview
+========
+
+**To get up & running quickly**, see the section of the
