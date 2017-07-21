@@ -27,6 +27,15 @@ what-you-see-is-what-you-get plaintext markup language.
       C [description = "database server"];
    }
 
+
+.. graphviz::
+
+   digraph foo {
+      "bar" -> "baz";
+   }
+
+
+
 Overview
 ========
 
