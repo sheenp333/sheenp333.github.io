@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Welcome to sheenp333’s documentation! &#8212; My Project 1 documentation</title>
+    <title>Other Features &#8212; My Project 1 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="This is a Title" href="example.html" /> 
+    <link rel="prev" title="Docutils: Documentation Utilities" href="blockdiag.html" /> 
   </head>
   <body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -34,9 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="example.html" title="This is a Title"
-             accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">My Project 1 documentation</a> &#187;</li> 
+          <a href="blockdiag.html" title="Docutils: Documentation Utilities"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">My Project 1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -45,36 +45,21 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-sheenp333-s-documentation">
-<h1>Welcome to sheenp333’s documentation!<a class="headerlink" href="#welcome-to-sheenp333-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="example.html">This is a Title</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="example.html#subject-subtitle">Subject Subtitle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="example.html#inline-markup">Inline Markup</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="blockdiag.html">Docutils: Documentation Utilities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="blockdiag.html#written-in-python-for-general-and-special-purpose-use">Written in Python, for General- and Special-Purpose Use</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="blockdiag.html#blockdiag-examples">Blockdiag examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="blockdiag.html#graphviz-examples">graphviz examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="otherfeatures.html">Other Features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="otherfeatures.html#grammar-production-displays">Grammar Production Displays</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="other-features">
+<h1>Other Features<a class="headerlink" href="#other-features" title="Permalink to this headline">¶</a></h1>
+<p>Usage of other sphinx features.</p>
+<div class="section" id="grammar-production-displays">
+<h2>Grammar Production Displays<a class="headerlink" href="#grammar-production-displays" title="Permalink to this headline">¶</a></h2>
+<pre>
+<strong id="grammar-token-try_stmt">try_stmt </strong> ::=  try1_stmt | try2_stmt
+<strong id="grammar-token-try1_stmt">try1_stmt</strong> ::=  &quot;try&quot; &quot;:&quot; <code class="xref docutils literal"><span class="pre">suite</span></code>
+               (&quot;except&quot; [<code class="xref docutils literal"><span class="pre">expression</span></code> [&quot;,&quot; <code class="xref docutils literal"><span class="pre">target</span></code>]] &quot;:&quot; <code class="xref docutils literal"><span class="pre">suite</span></code>)+
+               [&quot;else&quot; &quot;:&quot; <code class="xref docutils literal"><span class="pre">suite</span></code>]
+               [&quot;finally&quot; &quot;:&quot; <code class="xref docutils literal"><span class="pre">suite</span></code>]
+<strong id="grammar-token-try2_stmt">try2_stmt</strong> ::=  &quot;try&quot; &quot;:&quot; <code class="xref docutils literal"><span class="pre">suite</span></code>
+               &quot;finally&quot; &quot;:&quot; <code class="xref docutils literal"><span class="pre">suite</span></code>
+</pre>
 </div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
 </div>
 
 
@@ -83,19 +68,21 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to sheenp333’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#">Other Features</a><ul>
+<li><a class="reference internal" href="#grammar-production-displays">Grammar Production Displays</a></li>
+</ul>
+</li>
 </ul>
 
-  <h4>Next topic</h4>
-  <p class="topless"><a href="example.html"
-                        title="next chapter">This is a Title</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="blockdiag.html"
+                        title="previous chapter">Docutils: Documentation Utilities</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
+      <li><a href="_sources/otherfeatures.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -120,9 +107,9 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="example.html" title="This is a Title"
-             >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">My Project 1 documentation</a> &#187;</li> 
+          <a href="blockdiag.html" title="Docutils: Documentation Utilities"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">My Project 1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
