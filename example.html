@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Project example &#8212; The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</title>
+    <title>This is a Title &#8212; CompInfo 1 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.0',
+        VERSION:     '1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -21,8 +21,11 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Docutils: Documentation Utilities" href="blockdiag.html" />
+    <link rel="prev" title="CompInfo documentation!" href="index.html" /> 
   </head>
   <body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -31,7 +34,13 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="blockdiag.html" title="Docutils: Documentation Utilities"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="CompInfo documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">CompInfo 1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -40,54 +49,36 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="project-example">
-<h1>Project example<a class="headerlink" href="#project-example" title="Permalink to this headline">¶</a></h1>
-<p>TBD - simple example</p>
-<div class="section" id="project-layout">
-<h2>Project layout<a class="headerlink" href="#project-layout" title="Permalink to this headline">¶</a></h2>
-<p>XXX explains here the bascis</p>
-<div class="section" id="dos-and-don-ts">
-<h3>Dos and Don’ts<a class="headerlink" href="#dos-and-don-ts" title="Permalink to this headline">¶</a></h3>
-<p>XXX intro</p>
-<p>Dos:</p>
-<ul class="simple">
-<li>name the directory something related to your project. For example, if your
-project is named <cite>Twisted</cite>, name the top-level directory for its source files
-<cite>Twisted</cite>. When you do releases, you should include a version number suffix:
-Twisted-2.5.</li>
-<li>create a directory <code class="docutils literal"><span class="pre">Twisted/bin</span></code> and put your executables there, if you
-have any. Don’t give them a <code class="docutils literal"><span class="pre">.py</span></code> extension, even if they are Python source
-files. Don’t put any code in them except an import of and call to a main
-function defined somewhere else in your projects.</li>
-<li>if your project is expressable as a single Python source file, then put it
-into the directory and name it something related to your project. For
-example, <code class="docutils literal"><span class="pre">Twisted/twisted.py</span></code>. If you need multiple source files, create a
-package instead (<code class="docutils literal"><span class="pre">Twisted/twisted/</span></code>, with an empty
-<code class="docutils literal"><span class="pre">Twisted/twisted/__init__.py</span></code>) and place your source files in it. For
-example, <code class="docutils literal"><span class="pre">Twisted/twisted/internet.py</span></code>.</li>
-<li>put your unit tests in a sub-package of your package (note - this means that
-the single Python source file option above was a trick - you always need at
-least one other file for your unit tests). For example, <code class="docutils literal"><span class="pre">Twisted/twisted/test</span></code>.
-Of course, make it a package with <code class="docutils literal"><span class="pre">Twisted/twisted/test/__init__.py</span></code>. Place
-tests in files like <code class="docutils literal"><span class="pre">Twisted/twisted/test/test_internet.py</span></code>.</li>
-<li>add <code class="docutils literal"><span class="pre">Twisted/README</span></code> and <code class="docutils literal"><span class="pre">Twisted/setup.py</span></code> to explain and install your
-software, respectively, if you’re feeling nice.</li>
+  <div class="section" id="this-is-a-title">
+<h1>This is a Title<a class="headerlink" href="#this-is-a-title" title="Permalink to this headline">¶</a></h1>
+<p>That has a paragraph about a main subject and is set when the ‘=’
+is at least the same length of the title itself.</p>
+<div class="section" id="subject-subtitle">
+<h2>Subject Subtitle<a class="headerlink" href="#subject-subtitle" title="Permalink to this headline">¶</a></h2>
+<p>Subtitles are set with ‘-‘ and are required to have the same length
+of the subttitle itself, just like titles.</p>
+<p>Lists can be unnumbered like:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Item Foo</li>
+<li>Item Bar</li>
 </ul>
-<p>Don’ts:</p>
-<ul class="simple">
-<li>put your source in a directory called <code class="docutils literal"><span class="pre">src</span></code> or <code class="docutils literal"><span class="pre">lib</span></code>. This makes it hard
-to run without installing.</li>
-<li>put your tests outside of your Python package. This makes it hard to run the
-tests against an installed version.</li>
-<li>create a package that only has a <code class="docutils literal"><span class="pre">__init__.py</span></code> and then put all your code
-into <code class="docutils literal"><span class="pre">__init__.py</span></code>. Just make a module instead of a package, it’s simpler.</li>
-<li>try to come up with magical hacks to make Python able to import your module
-or package without having the user add the directory containing it to their
-import path (either via PYTHONPATH or some other mechanism). You will not
-correctly handle all cases and users will get angry at you when your software
-doesn’t work in their environment.</li>
-</ul>
+</div></blockquote>
+<p>Or automatically numbered:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Item 1</li>
+<li>Item 2</li>
+</ol>
+</div></blockquote>
 </div>
+<div class="section" id="inline-markup">
+<h2>Inline Markup<a class="headerlink" href="#inline-markup" title="Permalink to this headline">¶</a></h2>
+<p>Words can have <em>emphasis in italics</em> or be <strong>bold</strong> and you can
+define code samples with back quotes, like when you talk about a
+command: <code class="docutils literal"><span class="pre">sudo</span></code> gives you super user powers!</p>
+<p>This is an example on how to link images:</p>
+<img alt="_images/system_activity.jpg" src="_images/system_activity.jpg" />
 </div>
 </div>
 
@@ -99,34 +90,26 @@ doesn’t work in their environment.</li>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Project example</a><ul>
-<li><a class="reference internal" href="#project-layout">Project layout</a><ul>
-<li><a class="reference internal" href="#dos-and-don-ts">Dos and Don’ts</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">This is a Title</a><ul>
+<li><a class="reference internal" href="#subject-subtitle">Subject Subtitle</a></li>
+<li><a class="reference internal" href="#inline-markup">Inline Markup</a></li>
 </ul>
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">CompInfo documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="blockdiag.html"
+                        title="next chapter">Docutils: Documentation Utilities</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/example.txt"
+      <li><a href="_sources/example.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
-   </div><div>
-<h3>Feedback</h3>
-
-
-<ul>
- <li><a href="http://bitbucket.org/tarek/hitchhiker-guide-packaging/">Become a writer or a reviewer</a></li>
- <li>Help us by opening <a href="http://bitbucket.org/tarek/hitchhiker-guide-packaging/issues/">issues</a> 
- on the content you would like to see in the guide</li>
- <li>Join the <a href="http://groups.google.com/group/packaging-guide">Mailing List</a></li>
-</ul> 
-
-</div>
-
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -147,11 +130,17 @@ doesn’t work in their environment.</li>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="blockdiag.html" title="Docutils: Documentation Utilities"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="CompInfo documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">CompInfo 1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2009, Tarek Ziadé.
+        &#169; Copyright 2017, Patrick Sheen.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
