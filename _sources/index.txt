@@ -1,0 +1,37 @@
+==============================================
+Welcome to The Hitchhiker's Guide to Packaging
+==============================================
+
+.. warning:: This document is currently under development. Thank you for your interest.
+
+Table of Contents
+=================
+
+.. toctree::
+   :maxdepth: 2
+
+   quickstart.txt
+
+   introduction.txt
+   installation.txt
+
+   usage.txt
+   creation.txt
+
+   contributing.txt
+   virtualenv.txt
+
+   specification.txt
+   advanced.txt
+   future.txt
+
+   glossary.txt
+   credits.txt
+   license.txt
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

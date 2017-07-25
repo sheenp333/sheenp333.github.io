@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using Packages &#8212; The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Creating a Package" href="creation.html" />
+    <link rel="prev" title="Installing the Package Tools" href="installation.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="creation.html" title="Creating a Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installing the Package Tools"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-packages">
+<h1>Using Packages<a class="headerlink" href="#using-packages" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="finding-packages">
+<h2>Finding Packages<a class="headerlink" href="#finding-packages" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">TODO I’m mentioning <a class="reference internal" href="contributing.html#pypi-info"><span class="std std-ref">The Python Package Index (PyPI)</span></a> everywhere. Should probably move
+this up in the documentation instead of explaining it over and over.</p>
+</div>
+<p>How does one find a package. Well, the simple answer is to check
+<a class="reference internal" href="contributing.html#pypi-info"><span class="std std-ref">The Python Package Index (PyPI)</span></a> first. The other options are:</p>
+<ul class="simple">
+<li>To do a simple web search with google.com, yahoo, etc.</li>
+<li>Ask around the python community using <a class="reference internal" href="glossary.html#term-irc"><span class="xref std std-term">IRC</span></a></li>
+</ul>
+<p>We will cover the <a class="reference internal" href="contributing.html#pypi-info"><span class="std std-ref">The Python Package Index (PyPI)</span></a> later in the documentation.</p>
+</div>
+<div class="section" id="installing-from-other-sources">
+<h2>Installing from other sources<a class="headerlink" href="#installing-from-other-sources" title="Permalink to this headline">¶</a></h2>
+<p>When using the <a class="reference internal" href="installation.html#pip-info"><span class="std std-ref">Pip Installs Python (Pip)</span></a> application, how does it know what to install
+when you run <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Markdown</span></code>? By default, it checks the
+<a class="reference internal" href="contributing.html#pypi-info"><span class="std std-ref">The Python Package Index (PyPI)</span></a> for a package of that name. In this case, it found one; but
+what if you want to install a package that hasn’t been uploaded to PyPI?</p>
+<p>You have several options:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#installing-from-a-tarball">Installing from a tarball</a></li>
+<li><a class="reference internal" href="#installing-from-a-version-control-system-vcs">Installing from a Version Control System (VCS)</a></li>
+<li><a class="reference internal" href="#add-urls-to-search-for-links">Add URLs to search for links</a></li>
+</ul>
+<div class="section" id="installing-from-a-tarball">
+<span id="index-0"></span><h3>Installing from a tarball<a class="headerlink" href="#installing-from-a-tarball" title="Permalink to this headline">¶</a></h3>
+<p>You can install directly from a tarball or zip file, as long as there
+is a working <code class="docutils literal"><span class="pre">setup.py</span></code> file in the root directory of the unzipped
+contents:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install path/to/mypackage.tgz
+</pre></div>
+</div>
+<p>You can also install from a tarball/zip file over the network:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install http://dist.repoze.org/PIL-1.1.6.tar.gz
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-from-a-version-control-system-vcs">
+<h3>Installing from a Version Control System (VCS)<a class="headerlink" href="#installing-from-a-version-control-system-vcs" title="Permalink to this headline">¶</a></h3>
+<p>Using the <code class="docutils literal"><span class="pre">--editable</span></code> or <code class="docutils literal"><span class="pre">-e</span></code> option, pip has the capability to
+install directly from a version control repository (it currently
+supports Subversion, Mercurial, Git, and Bazaar):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install -e svn+http://svn.colorstudy.com/INITools/trunk#egg=initools-dev
+</pre></div>
+</div>
+<p>This option shells out to the command-line client for each respective
+VCS, so you must have the VCS installed on your system.  The repo URL
+must begin with <code class="docutils literal"><span class="pre">svn+</span></code> (or <code class="docutils literal"><span class="pre">hg+</span></code>, <code class="docutils literal"><span class="pre">git+</span></code>, or <code class="docutils literal"><span class="pre">bzr+</span></code>) and end
+with <code class="docutils literal"><span class="pre">#egg=packagename</span></code>; otherwise, pip supports the same URL
+formats and wire protocols supported by the VCS itself.</p>
+<p>Pip will checkout the source repo into a <code class="docutils literal"><span class="pre">src/</span></code> directory inside the
+virtualenv (i.e. <code class="docutils literal"><span class="pre">pip_test_env/src/initools-dev</span></code>), and then run
+<code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">develop</span></code> in that source repo. This “links” the code
+directly from the repo into the virtualenv’s <code class="docutils literal"><span class="pre">site-packages</span></code>
+directory (by adding the repo directory into <code class="docutils literal"><span class="pre">easy-install.pth</span></code>), so
+changes you make in the source checkout are effective immediately.</p>
+<p>If you already have a local VCS checkout you want to keep using, you
+can just use <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">path/to/repo</span></code> to install it “editable”
+in the same way.</p>
+</div>
+<div class="section" id="add-urls-to-search-for-links">
+<h3>Add URLs to search for links<a class="headerlink" href="#add-urls-to-search-for-links" title="Permalink to this headline">¶</a></h3>
+<p>You can use the <code class="docutils literal"><span class="pre">-f</span></code> or <code class="docutils literal"><span class="pre">--find-links</span></code> option to add another URL
+pip should search for links to the package. If you dump some package
+tarballs in a webserver directory and turn on automatic indexing, you
+can point pip at that index page and install any of those packages,
+assuming you named the files in the pattern
+<code class="docutils literal"><span class="pre">packagename-version.ext</span></code>.</p>
+<p>For example, if you upload a tarball <code class="docutils literal"><span class="pre">MyApp-1.0.tgz</span></code> to a
+<code class="docutils literal"><span class="pre">my-packages</span></code> directory on your webserver, and make sure indexing is
+on for that directory, you can run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install MyApp -f http://www.example.com/my-packages/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-your-own-package-index">
+<span id="index-1"></span><h2>Running your own package index<a class="headerlink" href="#running-your-own-package-index" title="Permalink to this headline">¶</a></h2>
+<p>If you want more of the features provided by PyPI (including the
+ability to upload packages with <code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">sdist</span> <span class="pre">upload</span></code>), you
+can run software such as <a class="reference external" href="http://github.com/ask/chishop">chishop</a>, which implements the PyPI API, on
+your own server. Then you can use pip’s <code class="docutils literal"><span class="pre">-i</span></code> (or <code class="docutils literal"><span class="pre">--index-url</span></code>) or
+<code class="docutils literal"><span class="pre">--extra-index-url</span></code> options to point it at your index.</p>
+<p>For instance, if you set up your own index at
+<a class="reference external" href="http://www.example.com/chishop/">http://www.example.com/chishop/</a>, you might run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install MyPrivateApp -i http://www.example.com/chishop/simple/
+</pre></div>
+</div>
+<p>If you use <code class="docutils literal"><span class="pre">-i</span></code> pip won’t check PyPI, only the index you provide. If
+you are installing multiple packages at once, some from your index and
+some from PyPI, you may want to use <code class="docutils literal"><span class="pre">--extra-index-url</span></code> instead, so
+pip will check both indexes.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Using Packages</a><ul>
+<li><a class="reference internal" href="#finding-packages">Finding Packages</a></li>
+<li><a class="reference internal" href="#installing-from-other-sources">Installing from other sources</a><ul>
+<li><a class="reference internal" href="#installing-from-a-tarball">Installing from a tarball</a></li>
+<li><a class="reference internal" href="#installing-from-a-version-control-system-vcs">Installing from a Version Control System (VCS)</a></li>
+<li><a class="reference internal" href="#add-urls-to-search-for-links">Add URLs to search for links</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-your-own-package-index">Running your own package index</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installing the Package Tools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="creation.html"
+                        title="next chapter">Creating a Package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/usage.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div><div>
+<h3>Feedback</h3>
+
+
+<ul>
+ <li><a href="http://bitbucket.org/tarek/hitchhiker-guide-packaging/">Become a writer or a reviewer</a></li>
+ <li>Help us by opening <a href="http://bitbucket.org/tarek/hitchhiker-guide-packaging/issues/">issues</a> 
+ on the content you would like to see in the guide</li>
+ <li>Join the <a href="http://groups.google.com/group/packaging-guide">Mailing List</a></li>
+</ul> 
+
+</div>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="creation.html" title="Creating a Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installing the Package Tools"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2009, Tarek Ziadé.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

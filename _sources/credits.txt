@@ -1,0 +1,27 @@
+=======
+Credits
+=======
+
+Here's the list of contributors: writers, editors, reviewers, and
+people who allowed some of their own content to be included in the
+guide.
+
+-- Tarek
+
+Contributors
+============
+
+- Jean-Paul Calderone
+- Martijn Faassen
+- Carl Meyer
+- John M. Gabriele
+- Reinout van Rees
+- Michael Mulich
+- C\. Titus Brown
+- Kevin Teague
+
+Referenced Materials
+====================
+
+- `Installing Python Modules <http://docs.python.org/install/>`_
+- `Distributing Python Modules <http://docs.python.org/distutils/>`_

@@ -1,0 +1,182 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Virtual Environments &#8212; The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Specifications" href="specification.html" />
+    <link rel="prev" title="Contribute Your Package to the World" href="contributing.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="specification.html" title="Specifications"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contributing.html" title="Contribute Your Package to the World"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="virtual-environments">
+<h1>Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-a-virtualenv">
+<h3>Creating a virtualenv<a class="headerlink" href="#creating-a-virtualenv" title="Permalink to this headline">¶</a></h3>
+<p>We’ll be using <a class="reference external" href="http://virtualenv.openplans.org/">virtualenv</a> so our installation experiments are
+contained and don’t modify your system Python environment. If you
+aren’t already familiar with virtualenv, you may want to read up on it
+first.</p>
+<p>Create a virtualenv:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ virtualenv --no-site-packages pip_test_env
+</pre></div>
+</div>
+<p>We use the <code class="docutils literal"><span class="pre">--no-site-packages</span></code> flag to prevent this virtualenv from
+“seeing” your global Python “site-packages” directory, so that our
+experiments aren’t confused by any Python packages you happen to
+already have installed globally.</p>
+<p>Recent versions of virtualenv (1.4+) automatically install pip for you
+inside the virtualenv (there will already be a <code class="docutils literal"><span class="pre">pip</span></code> script in
+<code class="docutils literal"><span class="pre">pip_test_env/bin/</span></code>). If you are using a pre-1.4 virtualenv, run
+<code class="docutils literal"><span class="pre">pip_test_env/bin/easy_install</span> <span class="pre">pip</span></code> to install pip in the virtual
+environment.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using Windows, executable scripts in the virtualenv will
+be located at <code class="docutils literal"><span class="pre">pip_test_env\Scripts\</span></code> rather than
+<code class="docutils literal"><span class="pre">pip_test_env/bin/</span></code>. Just replace all occurrences of the latter
+with the former.</p>
+</div>
+<p>Let’s “activate” the virtualenv to put <code class="docutils literal"><span class="pre">pip_test_env/bin</span></code> on our
+default PATH, so we can just type <code class="docutils literal"><span class="pre">pip</span></code> instead of
+<code class="docutils literal"><span class="pre">pip_test_env/bin/pip</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ . pip_test_env/bin/activate
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The leading dot is important.  Without it, a subshell is spawned
+and only that subshell gets the virtualenv activated.  The leading
+dot tells the shell to run the <cite>activate</cite> script in the current
+shell.</p>
+</div>
+<p>On Windows, this is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip_test_env\Scripts\activate.bat
+</pre></div>
+</div>
+<p>In either case, your shell prompt should now begin with
+<code class="docutils literal"><span class="pre">(pip_test_env)</span></code> to remind you that a virtualenv is activated. When
+you are done working with this virtualenv type <code class="docutils literal"><span class="pre">deactivate</span></code> to
+remove its bin directory from your PATH.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Virtual Environments</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#creating-a-virtualenv">Creating a virtualenv</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="contributing.html"
+                        title="previous chapter">Contribute Your Package to the World</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="specification.html"
+                        title="next chapter">Specifications</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/virtualenv.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div><div>
+<h3>Feedback</h3>
+
+
+<ul>
+ <li><a href="http://bitbucket.org/tarek/hitchhiker-guide-packaging/">Become a writer or a reviewer</a></li>
+ <li>Help us by opening <a href="http://bitbucket.org/tarek/hitchhiker-guide-packaging/issues/">issues</a> 
+ on the content you would like to see in the guide</li>
+ <li>Join the <a href="http://groups.google.com/group/packaging-guide">Mailing List</a></li>
+</ul> 
+
+</div>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="specification.html" title="Specifications"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contributing.html" title="Contribute Your Package to the World"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">The Hitchhiker&#39;s Guide to Packaging 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2009, Tarek Ziadé.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>
